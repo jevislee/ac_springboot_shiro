@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://ip:3306/usermanage?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+    testWhileIdle: true
+    testOnBorrow: true
+    validationQuery: SELECT 1
+
+crazycake:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 666666
+    expire: 0 #设置redis缓存永不过期(session过期完全交给shiro来处理)
+
+weixin:
+  appid: appid
+  appsecret: appsecret
