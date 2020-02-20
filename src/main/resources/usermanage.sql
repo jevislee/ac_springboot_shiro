@@ -16,10 +16,11 @@ CREATE TABLE `t_admin` (
 insert  into `t_admin`(`id`,`name`,`pswd`,`status`,`last_login_time`,`create_time`,`update_time`,`delete_time`) values (1,'admin','666666',1,NULL,'2019-11-01 15:48:28','2019-11-01 15:48:28',NULL);
 
 CREATE TABLE `t_admin_role` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) NOT NULL COMMENT '用户ID',
   `role_id` int(11) NOT NULL COMMENT '角色ID',
-  PRIMARY KEY (`id`,`admin_id`,`role_id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique` (`admin_id`,`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `t_api` (
